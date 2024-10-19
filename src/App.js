@@ -1,7 +1,12 @@
 import React from "react";
+import HomePage from "./pages/HomePage";
 
 const App = () => {
-   return <h1>HERO FOR BLOG HOME PAGE</h1>
+   return (
+      <>
+         <HomePage />
+      </>
+   );
 };
 
 export default App;
