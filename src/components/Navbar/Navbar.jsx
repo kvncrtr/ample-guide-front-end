@@ -1,5 +1,5 @@
 import React from 'react';
-import { MagnifyingGlass } from "@phosphor-icons/react";
+import { MagnifyingGlass, List } from "@phosphor-icons/react";
 
 const Navbar = () => {
   return (
@@ -12,6 +12,10 @@ const Navbar = () => {
 
       <div className="nav--search-container">
          <MagnifyingGlass size={15} />
+      </div>
+
+      <div className="nav--menu-container">
+        <List size={18} />
       </div>
     </div>
   )

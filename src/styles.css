@@ -1,3 +1,7 @@
-
+@media screen and (min-width: 325px) {
+  body {
+    background-color: #242424;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */

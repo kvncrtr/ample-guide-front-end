@@ -1,0 +1,7 @@
+@use "../../abstracts/variables" as *;
+
+@media screen and (min-width: 325px) {
+   body {
+      background-color: $achromatic-800;
+   }
+}
