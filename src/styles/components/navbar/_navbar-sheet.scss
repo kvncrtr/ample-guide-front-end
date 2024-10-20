@@ -2,12 +2,13 @@
 
 @media screen and (min-width: 325px) {
    .nav--container {
+      z-index: 99;
       position: absolute;
       top: 0;
       display: flex;
       align-items: center;
-      width: 100vw;
       height: 7.75rem;
+      width: 100%;
       padding: 0 1rem;
       color: $achromatic-100;
    }

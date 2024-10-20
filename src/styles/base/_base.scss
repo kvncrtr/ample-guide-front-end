@@ -1,3 +1,5 @@
+@use "../abstracts/variables" as *;
+
 *, *::before, *::after {
    box-sizing: border-box;
 }
@@ -6,6 +8,10 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+
+#root, html, body {
+	width: calc(100vw - 10px);
 }
 
 :root {
@@ -24,6 +30,19 @@ body {
 	-webkit-font-smoothing: antialiased;
    box-sizing: border-box;
 	min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: $achromatic-700;
+ }
+
+::-webkit-scrollbar-thumb {
+	background-color: $achromatic-600; 
 }
 
 img, picture, video, canvas, svg {
