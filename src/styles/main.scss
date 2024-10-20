@@ -7,4 +7,7 @@
 @use "./abstracts/mixins";
 @use "./abstracts/variables";
 
-@use "./components/navbar/navbar";
+@use "./components/navbar/navbar-sheet";
+@use "./components/hero/hero-sheet";
+
+@use "./pages/home/home-sheet";
