@@ -15,7 +15,9 @@
    }
 
    .hero--card {
-      
+      width: min(100%, auto);
+      aspect-ratio: 2 / 3; 
+      background-color: red;
    }
 
    .hero--card-img {
