@@ -15,12 +15,25 @@
    }
 
    .hero--card {
-      width: min(100%, auto);
-      aspect-ratio: 2 / 3; 
+      position: relative;
+      min-width: 17.313rem;
+      aspect-ratio: 277 / 320; 
       background-color: red;
+      overflow: hidden;
    }
 
    .hero--card-img {
-     
+      z-index: 1;
+      min-width: 17.313rem;
+      width: 100%;
+      min-height: 20rem;
+      height: auto;
+     object-fit: cover;
+   }
+
+   .hero--card-text-box {
+      z-index: 3;
+      position: absolute;
+      top: 0;      
    }
 }
