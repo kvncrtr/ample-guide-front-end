@@ -7,7 +7,7 @@ const Hero = () => {
 
       <div className="hero--card-container">
         <div className="hero--card">
-          {/* <img className="hero--card-img" src={landImg} alt="landscape aerial view" /> */}
+          <img className="hero--card-img" src={landImg} alt="landscape aerial view" />
         </div>
 
         
