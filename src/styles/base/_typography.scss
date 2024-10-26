@@ -4,4 +4,19 @@
    .hero--card-text-box {
       color: $achromatic-100;
    }
+
+   .hero--card-text-box > h1 {
+      font-weight: 100;
+   }
+
+   .hero--card-category {
+      text-transform: uppercase;
+      font-weight: 100;
+      font-size: 20px;
+   }
+
+   .hero--card-details {
+      opacity: 0.9;
+      color: $achromatic-600;
+   }
 }
