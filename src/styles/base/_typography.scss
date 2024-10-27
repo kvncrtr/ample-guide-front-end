@@ -6,17 +6,26 @@
    }
 
    .hero--card-text-box > h1 {
-      font-weight: 100;
+      font-weight: 600;
    }
 
    .hero--card-category {
       text-transform: uppercase;
-      font-weight: 100;
-      font-size: 20px;
+      font-weight: 500;
+      font-size: 13px;
    }
 
    .hero--card-details {
       opacity: 0.9;
       color: $achromatic-600;
+   }
+
+   .hero--headline-title {
+      color: $achromatic-100;
+   }
+
+   .hero--item {
+      color: $achromatic-100;
+      font-weight: 700;
    }
 }
