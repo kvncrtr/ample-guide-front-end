@@ -5,7 +5,7 @@ import Hero from "../components/hero/Hero";
 const HomePage = () => {
   return (
     <div className="home--container">
-      {/* <h1 className="home--title">Ample Guide</h1> */}
+      <h1 className="home--title">Ample Guide</h1>
 
       <Navbar />
       <Hero />
