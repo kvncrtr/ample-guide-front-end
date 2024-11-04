@@ -1,5 +1,5 @@
-import store from "./store.js";
-import { addPost, removePost, markAsFreePost } from "./action.js";
+import store from "./store/config";
+import { addPost, removePost, markAsFreePost } from "./store/post";
 
 const unsubscribe = store.subscribe(() => {
    console.log(store.getState(), " <= updated state")
