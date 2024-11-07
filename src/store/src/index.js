@@ -9,3 +9,5 @@ store.dispatch(fetchPost());
 store.dispatch(markAsFreePost({ id: 1, free: true }));
 
 console.log(store.getState());
+// delete methods
+// add redux toolkit to dependencies
