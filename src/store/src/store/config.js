@@ -1,18 +1,10 @@
-import { legacy_createStore as createStore, applyMiddleware, compose } from "redux";
-import { createLogger } from "redux-logger";
-import { thunk } from "redux-thunk";
-import reducer from "./post";
+import { configureStore } from "@reduxjs/toolkit";
+import postReducer from "./post";
 
-const logger = createLogger({
-   collapsed: true,
-   diff: true
+const store = configureStore({ 
+   reducer: {
+      post: postReducer
+   } 
 });
 
-const componsedEnhancers = compose(
-   applyMiddleware(thunk, logger), 
-   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
-
-const store = createStore(reducer, componsedEnhancers);
-   
 export default store;
