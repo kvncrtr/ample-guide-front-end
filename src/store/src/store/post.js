@@ -1,4 +1,4 @@
-import { createAction, createReducer, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 // State
 const postState = {
@@ -81,16 +81,35 @@ export const postSlice = createSlice({
       addPost: (state, action) => {
          let newPost = Object.assign({}, state[0]);
    
-         newPost.id += 1;
+         newPost.id = action.payload.id;
          newPost.author = action.payload.author;
          newPost.text = action.payload.text;
-         state.post.latestPost.push(newPost);
+         state.latestPost.push(newPost);
+      },
+      onPending: (state, action) => {
+         state.isLoading = true;
+         state.message = "";
+      },
+      onSuccess: (state, action) => {
+         state.isLoading = false;
+         state.message = "";
+      },
+      onFail: (state, action) => {
+         state.isLoading = false;
+         state.message = "";
+      },
+      showError: (state, action) => {
+         state.message = action.payload.message;
+         console.log(action.payload.message);
       }
    }
 });
 
 export const {
-   addPost
+   addPost,
+   onPending,
+   onSuccess, 
+   onFail
 } = postSlice.actions;
 
 export default postSlice.reducer;
