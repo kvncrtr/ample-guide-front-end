@@ -1,10 +1,14 @@
 import store from "./store/config";
-import { addPost } from "./store/post";
+import axios from "axios";
+import { addPost, onPending } from "./store/post";
 
-const unsubscribe = store.subscribe(() => {
-   console.log(store.getState(), " <= updated state")
-})
+export const getPost = async () => {
+   // call api
+   store.dispatch(onPending());
+   const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
 
-store.dispatch(addPost({ id: 0, author: "Kevin Carter", text: "This is a new post the lastest news on the music industry" }));
+   // dispatch function 
+   store.dispatch(addPost({ id: 2, author: "Koren Carter", text: response.data[1].body }));
+};
 
-console.log(store.getState());
+getPost();
