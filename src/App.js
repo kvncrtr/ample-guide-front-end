@@ -1,11 +1,15 @@
 import React from "react";
-import HomePage from "./pages/HomePage";
+import store from "./store/config.js";
+import StoreContext from "./context/storeContext.js";
+import HomePage from "./pages/HomePage.jsx";
 
 const App = () => {
    return (
-      <>
-         <HomePage />
-      </>
+      <StoreContext.Provider value={store}>
+         <div>
+            <HomePage />
+         </div>
+      </StoreContext.Provider>
    );
 };
 
