@@ -1,15 +1,15 @@
 import React from "react";
 import store from "./store/config.js";
-import StoreContext from "./context/storeContext.js";
+import { Provider } from "react-redux";
 import HomePage from "./pages/HomePage.jsx";
 
 const App = () => {
    return (
-      <StoreContext.Provider value={store}>
+      <Provider store={store}>
          <div>
             <HomePage />
          </div>
-      </StoreContext.Provider>
+      </Provider>
    );
 };
 
