@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { apiCallBegin } from "./api";
+import axios from "../utils/http";
 
 // State
-const postState = {
+const initialState = {
    latestPost: [{
          id: 0,
          issn: "",
@@ -76,30 +78,20 @@ const postState = {
 // Slices
 export const postSlice = createSlice({
    name: "post",
-   initialState: postState,
+   initialState,
    reducers: {
       addPost: (state, action) => {
-         let newPost = Object.assign({}, state[0]);
-   
-         newPost.id = action.payload.id;
-         newPost.author = action.payload.author;
-         newPost.text = action.payload.text;
-         state.latestPost.push(newPost);
+         state.latestPost = action.payload;
       },
-      onPending: (state, action) => {
+      onInit: (state, action) => {
          state.isLoading = true;
-         state.message = "";
-      },
-      onSuccess: (state, action) => {
-         state.isLoading = false;
          state.message = "";
       },
       onFail: (state, action) => {
          state.isLoading = false;
-         state.message = "";
+         state.message = action.payload.message;
       },
       showError: (state, action) => {
-         state.message = action.payload.message;
          console.log(action.payload.message);
       }
    }
@@ -107,9 +99,19 @@ export const postSlice = createSlice({
 
 export const {
    addPost,
-   onPending,
-   onSuccess, 
-   onFail
+   onInit, 
+   onFail,
+   showError
 } = postSlice.actions;
 
 export default postSlice.reducer;
+
+// Action Creators
+const url = "/posts"
+
+export const createPost = () => apiCallBegin({
+   url,
+   onInit: onInit.type,
+   onSuccess: addPost.type,
+   onError: onFail.type
+});

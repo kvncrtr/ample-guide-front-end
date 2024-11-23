@@ -1,12 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 import postReducer from "./post";
-import log from "../middleware/log";
+import api from "./middleware/api";
 
 const store = configureStore({ 
    reducer: {
       post: postReducer
    },
-   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(log)
+   middleware: (getDefaultMiddleware) => [
+      ...getDefaultMiddleware(),
+      api
+   ]
 });
 
 export default store;
