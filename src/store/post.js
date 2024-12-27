@@ -3,73 +3,7 @@ import { apiCallBegin } from "./api";
 
 // State
 const initialState = {
-   latestPost: [{
-      id: 0,
-      issn: "",
-      about: "",
-      abstract: "",
-      accessMode: "",
-      accessModeSufficient: "",
-      accountablePerson: "",
-      aggregateRating: "",
-      alternativeHeadline: "",
-      audience: "",
-      author: "",
-      citation: "",
-      comment: "",
-      commentCount: 0,
-      conditionsOfAccess: "",
-      contentRating: "",
-      contributor: "",
-      copyrightHolder: "",
-      copyrightNotice: "",
-      copyrightYear: 2024,
-      countryOfOrigin: "",
-      creativeWorkStatus: "",
-      creditText: "",
-      dateCreated: "",
-      dateModified: "",
-      datePublished: "",
-      discussionUrl: "",
-      editor: "",
-      educationLevel: "",
-      educationalUse: "",
-      encodingFormat: "",
-      expires: "",
-      funder: "",
-      genre: "",
-      hasPart: false,
-      headline: "",
-      inLanguage: "",
-      interactionStatistic: "",
-      isAccessibleForFree: true,
-      isFamilyFriendly: true,
-      isPartOf: "",
-      keywords: "",
-      license: "",
-      locationCreated: "",
-      mentions: "",
-      offers: "",
-      position: 0,
-      publisher: "",
-      schemaVersion: "1.0.0",
-      size: 0.0,
-      sponsor: "",
-      teaches: "",
-      text: "",
-      thumbnail: {},
-      thumbnailUrl: "",
-      timeRequired: "",
-      typicalAgeRange: "",
-      version: "1.0.0",
-      video: {},
-      videoUrl: "",
-      additionalType: "",
-      description: "",
-      name: "",
-      potentialAction: "",
-      url: "",
-   }],
+   latestPost: [],
    isLoading: false,
    message: ""
 }
@@ -106,7 +40,7 @@ export const {
 export default postSlice.reducer;
 
 // Action Creators
-const url = "/posts"
+const url = "/api/posts"
 
 export const getAllPost = () => apiCallBegin({
    url,
@@ -114,3 +48,7 @@ export const getAllPost = () => apiCallBegin({
    onSuccess: loadPost.type,
    onError: onFail.type
 });
+
+export const getLastestPost = () => apiCallBegin({
+
+})
