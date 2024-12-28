@@ -3,73 +3,7 @@ import { apiCallBegin } from "./api";
 
 // State
 const initialState = {
-   latestPost: [{
-      id: 0,
-      issn: "",
-      about: "",
-      abstract: "",
-      accessMode: "",
-      accessModeSufficient: "",
-      accountablePerson: "",
-      aggregateRating: "",
-      alternativeHeadline: "",
-      audience: "",
-      author: "",
-      citation: "",
-      comment: "",
-      commentCount: 0,
-      conditionsOfAccess: "",
-      contentRating: "",
-      contributor: "",
-      copyrightHolder: "",
-      copyrightNotice: "",
-      copyrightYear: 2024,
-      countryOfOrigin: "",
-      creativeWorkStatus: "",
-      creditText: "",
-      dateCreated: "",
-      dateModified: "",
-      datePublished: "",
-      discussionUrl: "",
-      editor: "",
-      educationLevel: "",
-      educationalUse: "",
-      encodingFormat: "",
-      expires: "",
-      funder: "",
-      genre: "",
-      hasPart: false,
-      headline: "",
-      inLanguage: "",
-      interactionStatistic: "",
-      isAccessibleForFree: true,
-      isFamilyFriendly: true,
-      isPartOf: "",
-      keywords: "",
-      license: "",
-      locationCreated: "",
-      mentions: "",
-      offers: "",
-      position: 0,
-      publisher: "",
-      schemaVersion: "1.0.0",
-      size: 0.0,
-      sponsor: "",
-      teaches: "",
-      text: "",
-      thumbnail: {},
-      thumbnailUrl: "",
-      timeRequired: "",
-      typicalAgeRange: "",
-      version: "1.0.0",
-      video: {},
-      videoUrl: "",
-      additionalType: "",
-      description: "",
-      name: "",
-      potentialAction: "",
-      url: "",
-   }],
+   latestPost: [],
    isLoading: false,
    message: ""
 }
@@ -81,6 +15,9 @@ export const postSlice = createSlice({
    reducers: {
       loadPost: (state, action) => {
          state.latestPost = action.payload;
+      },
+      retrieveLatestPosts: (state, action) => {
+         
       },
       onInit: (state, action) => {
          state.isLoading = true;
@@ -97,20 +34,20 @@ export const postSlice = createSlice({
 });
 
 export const {
-   loadPost,
+   retrieveLatestPosts,
    onInit, 
    onFail,
    showError
 } = postSlice.actions;
 
 export default postSlice.reducer;
-
+ 
 // Action Creators
-const url = "/posts"
+const latestPostsUrl = "/api/latest-posts";
 
-export const getAllPost = () => apiCallBegin({
-   url,
+export const getLastestPost = () => apiCallBegin({
+   latestPostsUrl,
    onInit: onInit.type,
-   onSuccess: loadPost.type,
-   onError: onFail.type
+   onSuccess: retrieveLatestPosts.type,
+   onError: showError.type
 });

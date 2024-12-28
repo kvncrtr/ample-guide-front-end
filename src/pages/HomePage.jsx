@@ -1,17 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux'; 
-import { getAllPost } from "../store/post";
+import React from 'react';
 import Navbar from '../components/navbar/Navbar';
 import Hero from "../components/hero/Hero";
 
 const HomePage = () => {
-  const {latestPost, isLoading} = useSelector(state => state.post);
-  const dispatch = useDispatch();
-  
-  useEffect(() => {
-    dispatch(getAllPost());
-  }, []);
-
   return (
     <div className="home--container">
       <h1 className="home--title">Ample Guide</h1>
