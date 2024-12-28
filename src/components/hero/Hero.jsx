@@ -1,8 +1,10 @@
-import React from "react";
-import { BlogPostCard } from "../shared/BlogPostCard";
-import landImg from "../../assets/inherit-the-land.jpg";
+import React, { useEffect } from "react";
 
 const Hero = () => {
+  useEffect(() => {
+    console.log('start');
+  }, []);
+
   return (
     <div className="hero--container">
 

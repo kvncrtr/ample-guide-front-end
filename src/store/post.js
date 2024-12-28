@@ -16,6 +16,9 @@ export const postSlice = createSlice({
       loadPost: (state, action) => {
          state.latestPost = action.payload;
       },
+      retrieveLatestPosts: (state, action) => {
+         
+      },
       onInit: (state, action) => {
          state.isLoading = true;
          state.message = "";
@@ -31,24 +34,20 @@ export const postSlice = createSlice({
 });
 
 export const {
-   loadPost,
+   retrieveLatestPosts,
    onInit, 
    onFail,
    showError
 } = postSlice.actions;
 
 export default postSlice.reducer;
-
+ 
 // Action Creators
-const url = "/api/posts"
-
-export const getAllPost = () => apiCallBegin({
-   url,
-   onInit: onInit.type,
-   onSuccess: loadPost.type,
-   onError: onFail.type
-});
+const latestPostsUrl = "/api/latest-posts";
 
 export const getLastestPost = () => apiCallBegin({
-
-})
+   latestPostsUrl,
+   onInit: onInit.type,
+   onSuccess: retrieveLatestPosts.type,
+   onError: showError.type
+});
