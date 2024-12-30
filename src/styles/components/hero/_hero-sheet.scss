@@ -15,58 +15,11 @@
       flex-direction: column;
       gap: 1.563rem;
    }
-
-   .hero--card {
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      aspect-ratio: 277 / 320; 
-      min-width: 17.313rem;
-      overflow: hidden;
-   }
-   
-   .hero--card-img {
-      z-index: 1;
-      position: absolute;
-      min-width: 17.313rem;
-      width: 100%;
-      min-height: 20rem;
-      height: auto;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-   }
-   
-   .hero--gradient {
-      z-index: 3;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-image: linear-gradient(to top, rgba(0,0,0, 1), rgba(0,0,0,0.2));
-   }
-   
-   .hero--card-text-box {
-      z-index: 4;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      padding: 1.563rem;
-   }
-
-   .hero--card-text-box > h1 {
-      line-height: normal;
-      margin-top: 1.625rem;
-   }
    
    .hero--card-category {
       width: min-content;
       border-top: 1px solid rgba(255,255,255, 0.5);
       padding-top: 0.563rem;
-   }
-
-   .hero--card-details {
-      display: flex;
-      gap: 0.938rem;
-      margin-top: 1.438rem;
    }
 
    .hero--card:hover {

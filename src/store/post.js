@@ -15,7 +15,7 @@ export const postSlice = createSlice({
    reducers: {
       retrieveLatestPosts: (state, action) => {
          state.isLoading = false;
-         state.latestPosts = [action.payload[0]];         
+         state.latestPosts = action.payload;         
       },
       onInit: (state, action) => {
          state.isLoading = true;

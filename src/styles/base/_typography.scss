@@ -1,26 +1,26 @@
 @use "../abstracts/variables" as *;
 
 @media screen and (min-width: 325px) {
-   .hero--card-text-box {
+   .preview--card-text-box {
       color: $achromatic-100;
    }
 
-   .hero--card-text-box > h1 {
+   .preview--card-text-box > h1 {
       font-weight: 600;
    }
 
-   .hero--card-category {
+   .preview--card-category {
       text-transform: uppercase;
       font-weight: 500;
       font-size: 13px;
    }
 
-   .hero--card-details {
+   .preview--card-details {
       opacity: 0.9;
       color: $achromatic-600;
    }
 
-   .hero--headline-title {
+   .preview--headline-title {
       color: $achromatic-100;
    }
 

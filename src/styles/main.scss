@@ -8,6 +8,9 @@
 @use "./abstracts/variables";
 
 @use "./components/navbar/navbar-sheet";
+
 @use "./components/hero/hero-sheet";
+
+@use "./components/shared/preview-card";
 
 @use "./pages/home/home-sheet";
