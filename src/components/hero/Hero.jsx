@@ -1,10 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 const Hero = () => {
-  useEffect(() => {
-    console.log('start');
-  }, []);
-
   return (
     <div className="hero--container">
 

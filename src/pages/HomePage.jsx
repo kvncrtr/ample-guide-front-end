@@ -1,8 +1,12 @@
-import React from 'react';
+import {useEffect} from 'react';
 import Navbar from '../components/navbar/Navbar';
 import Hero from "../components/hero/Hero";
 
 const HomePage = () => {
+  useEffect(() => {
+    console.log('start')
+  }, []);
+
   return (
     <div className="home--container">
       <h1 className="home--title">Ample Guide</h1>
