@@ -1,0 +1,8 @@
+{
+   "name": "ample-guide",
+   "short_name": "AG",
+   "start_url": "http://localhost:3000",
+   "display": "standalone",
+   "background_color": "#ffffff",
+   "theme_color": "#000000"
+}

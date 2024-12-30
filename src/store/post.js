@@ -3,7 +3,7 @@ import { apiCallBegin } from "./api";
 
 // State
 const initialState = {
-   latestPost: [],
+   latestPosts: [],
    isLoading: false,
    message: ""
 }
@@ -15,8 +15,7 @@ export const postSlice = createSlice({
    reducers: {
       retrieveLatestPosts: (state, action) => {
          state.isLoading = false;
-         console.log(action.payload);
-         
+         state.latestPosts = [action.payload[0]];         
       },
       onInit: (state, action) => {
          state.isLoading = true;
@@ -27,6 +26,7 @@ export const postSlice = createSlice({
          state.message = action.payload.message;
       },
       showError: (state, action) => {
+         state.message = action.payload.message;
          console.log(action.payload.message);
       }
    }
@@ -44,7 +44,7 @@ export default postSlice.reducer;
 // Action Creators
 const latestPostsUrl = "/api/latest-posts";
 
-export const getLastestPosts = () => apiCallBegin({
+export const getLatestPosts = () => apiCallBegin({
    url: latestPostsUrl,
    onInit: onInit.type,
    onSuccess: retrieveLatestPosts.type,
