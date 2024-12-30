@@ -13,10 +13,9 @@ export const postSlice = createSlice({
    name: "post",
    initialState,
    reducers: {
-      loadPost: (state, action) => {
-         state.latestPost = action.payload;
-      },
       retrieveLatestPosts: (state, action) => {
+         state.isLoading = false;
+         console.log(action.payload);
          
       },
       onInit: (state, action) => {
@@ -45,8 +44,8 @@ export default postSlice.reducer;
 // Action Creators
 const latestPostsUrl = "/api/latest-posts";
 
-export const getLastestPost = () => apiCallBegin({
-   latestPostsUrl,
+export const getLastestPosts = () => apiCallBegin({
+   url: latestPostsUrl,
    onInit: onInit.type,
    onSuccess: retrieveLatestPosts.type,
    onError: showError.type

@@ -17,15 +17,17 @@ const api = ({ dispatch }) => (next) => async (action) => {
       dispatch({ type: onInit, payload: { message: "Reaching out to server. Just a moment..." }});
    try {
       const response = await axios.request({
-         baseURL: "https://jsonplaceholder.typicode.com",
+         baseURL: "http://localhost:8080",
          url,
          method,
-         data
+         data,
+         params: action.payload.params,
       });
 
       dispatch({ type: onSuccess, payload: response.data });      
    } catch (error) {
-      dispatch({ type: onError, payload: { error: error.message } })
+      const errorMessage = error.response?.data?.message || error.message;
+      dispatch({ type: onError, payload: { message: `Error: ${errorMessage}` } })
    }
 };
 

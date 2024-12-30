@@ -1,10 +1,14 @@
-import {useEffect} from 'react';
-import Navbar from '../components/navbar/Navbar';
+import {useEffect} from "react";
+import { getLastestPosts } from "../store/post";
+import Navbar from "../components/navbar/Navbar";
 import Hero from "../components/hero/Hero";
+import { useDispatch } from "react-redux";
 
 const HomePage = () => {
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    console.log('start')
+    dispatch(getLastestPosts());
   }, []);
 
   return (
