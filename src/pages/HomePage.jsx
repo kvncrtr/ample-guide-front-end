@@ -2,14 +2,14 @@ import {useEffect} from "react";
 import { getLatestPosts } from "../store/post";
 import Navbar from "../components/navbar/Navbar";
 import Hero from "../components/hero/Hero";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const HomePage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getLatestPosts());
-  }, []);
+  });
 
   return (
     <div className="home--container">
