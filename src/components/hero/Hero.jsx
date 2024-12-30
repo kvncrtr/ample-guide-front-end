@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 
 const Hero = () => {
   const latestPosts = useSelector(state => state.post.latestPosts);
-  console.log(latestPosts);  
 
   return (
     <div className="hero--container">

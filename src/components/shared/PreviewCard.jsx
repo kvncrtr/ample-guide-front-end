@@ -1,5 +1,11 @@
+import Time from "../../utils/time";
+
 const PreviewCard = ({ post }) => {
    const { thumbnail_url, headline, about, author, time_created } = post;
+
+   const RenderTime = (time_created) => {
+      return Time.CalcTimeLapse(time_created);
+   };   
 
    return (
       <div className={"preview--card-case"}>
@@ -12,7 +18,7 @@ const PreviewCard = ({ post }) => {
          
          <div className="preview--card-details">
             <p>{author}</p>
-            <div>{time_created}</div>
+            <div>{RenderTime(time_created)}</div>
          </div>
          </div>
       </div>
