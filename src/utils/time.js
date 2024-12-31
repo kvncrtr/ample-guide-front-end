@@ -7,26 +7,29 @@ class Time {
       const timezoneOffestMinutes = currentTime.getTimezoneOffset();
       const currentZoneMinutes = currentTimeMinutes - timezoneOffestMinutes;
       
-      const postTime = new Date(utc);
+      const postTime = new Date(utc);      
       const postTimeMillis = postTime.getTime(); 
       const postTimeMinutes = Math.floor(postTimeMillis / 60000);
       const postZoneMinutes = postTimeMinutes - timezoneOffestMinutes;
       let timeDifference = currentZoneMinutes - postZoneMinutes;
+      console.log(timeDifference);
 
       // if mins is 1 or less than then call transform to now
       if (timeDifference <= 1) timelapse = "now";
 
+      if (timeDifference === 1) timelapse = "1 Minute Ago."
+
       // if mins is less than 60 then call transform to mins
-      if (timeDifference < 60) timelapse = `${timeDifference} Minutes Ago.`;
+      if (timeDifference >= 2 && timeDifference < 60) timelapse = `${timeDifference} Minutes Ago.`;
 
       // if mins is more than 60 but less than 1440 then transform to hours
-      if (timeDifference > 60 && timeDifference < 1440) timelapse = this.transformToHours(timeDifference);
+      if (timeDifference >= 60 && timeDifference < 1440) timelapse = this.transformToHours(timeDifference);
       
       // if mins is 1440 or more but less than 40,320 then call transform to days
       if (timeDifference >= 1140 && timeDifference < 40320) timelapse = this.transformToDays(timeDifference);
       
       // if mins is or more than 40,320 then parse date only
-      if (timeDifference > 40320) timelapse = this.transformToDateTimestamp(postZoneMinutes)
+      if (timeDifference >= 40320) timelapse = this.transformToDateTimestamp(postZoneMinutes)
 
       return timelapse;
    }
