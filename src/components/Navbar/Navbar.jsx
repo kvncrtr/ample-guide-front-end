@@ -7,6 +7,15 @@ const Navbar = () => {
 
       <div className="nav--case">
         <h2 className="nav--logo">AG</h2> 
+
+        <div className="nav--list">
+          <p className={"nav--list-item"}>Latest</p>
+          <p className={"nav--list-item"}>Faith</p>
+          <p className={"nav--list-item"}>Music</p>
+          <p className={"nav--list-item"}>Business</p>
+          <p className={"nav--list-item"}>Biblical Breakdowns</p>
+          <p className={"nav--list-item"}>Personal</p>
+        </div>
         
         <div className="nav--utilities">
           <div className="nav--auth-container">

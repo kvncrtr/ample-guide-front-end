@@ -38,3 +38,16 @@
       font-weight: 700;
    }
 }
+
+@media screen and (min-width: 1025px) {
+   .nav--list {
+      font-weight: 700;
+   }
+
+   .hero--title {
+      font-size: 3.11rem;
+      font-weight: 900;
+      letter-spacing: 0.6rem;
+      color: $achromatic-100;
+   }   
+}

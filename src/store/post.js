@@ -3,7 +3,8 @@ import { apiCallBegin } from "./api";
 
 // State
 const initialState = {
-   latestPosts: [],
+   leadPost: [],
+   nextPosts: [],
    isLoading: false,
    message: ""
 }
@@ -14,8 +15,10 @@ export const postSlice = createSlice({
    initialState,
    reducers: {
       retrieveLatestPosts: (state, action) => {
+         const next = action.payload.slice(1);
          state.isLoading = false;
-         state.latestPosts = action.payload;         
+         state.leadPost = action.payload[0];
+         state.nextPosts = next;
       },
       onInit: (state, action) => {
          state.isLoading = true;

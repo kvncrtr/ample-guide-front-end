@@ -1,14 +1,14 @@
 import Time from "../../utils/time";
 
 const PreviewCard = ({ post }) => {
-   const { thumbnail_url, headline, about, author, time_created } = post;
+   const { id, thumbnail_url, headline, about, author, time_created } = post;
 
    const RenderTime = (time_created) => {
       return Time.CalcTimeLapse(time_created);
    };   
 
    return (
-      <div className={"preview--card-case"}>
+      <div className={`preview--card-case post--${id}`}>
          <img className={"preview--card-img"} src={thumbnail_url} alt={headline} />
          
          <div className="preview--card-gradient"></div>

@@ -9,6 +9,10 @@
       background-color: $primary-500;
    }
 
+   .hero--title-container {
+      display: none;
+   }
+
    .hero--card-container {
       display: flex;
       width: 100%;
@@ -86,6 +90,39 @@
 
 @media screen and (min-width: 768px) {
    .hero--container {
-      padding: 7.188rem 2rem 2.563rem;
+      padding: 7.188rem 2rem 2.05rem;
    }
+}
+
+@media screen and (min-width: 1025px) {
+   .hero--container {
+      display: flex;
+      flex-direction: column;
+      padding-top: 5rem;
+   }
+
+   .hero--section {
+      display: grid;
+      grid-template-areas: 
+         "main headlines"
+         "main headlines"
+      ;
+      grid-template-columns: 68.97vw auto;
+   }
+
+   .hero--card-container {
+      margin-top: 1.063rem;
+      padding: 0;
+   }
+
+   .hero--title-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: min-content;
+   }
+   
+   .hero--title {
+      display: flex;
+   }  
 }

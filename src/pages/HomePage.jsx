@@ -13,7 +13,6 @@ const HomePage = () => {
 
   return (
     <div className="home--container">
-      <h1 className="home--title">Ample Guide</h1>
       <Navbar />
       <Hero />
     </div>
