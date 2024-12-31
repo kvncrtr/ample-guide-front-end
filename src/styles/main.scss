@@ -14,3 +14,17 @@
 @use "./components/shared/preview-card";
 
 @use "./pages/home/home-sheet";
+
+@media screen and (min-width: 325px) {
+   .app--container {
+      transition: padding-right 0.3s ease;
+
+      &.app--padding {
+         padding-right: 10px;
+      }
+
+      &.no--padding {
+         padding-left: 0;
+      }
+   }
+}

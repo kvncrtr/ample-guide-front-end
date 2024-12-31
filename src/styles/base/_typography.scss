@@ -1,6 +1,15 @@
 @use "../abstracts/variables" as *;
 
 @media screen and (min-width: 325px) {
+   .nav--logo {
+      font-size: 1.92rem;
+      margin: auto 0;
+   }
+
+   .nav--auth-greeting {
+      font-size: 0.7rem;
+   }
+
    .preview--card-text-box {
       color: $achromatic-100;
    }

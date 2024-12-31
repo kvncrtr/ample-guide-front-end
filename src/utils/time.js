@@ -12,7 +12,6 @@ class Time {
       const postTimeMinutes = Math.floor(postTimeMillis / 60000);
       const postZoneMinutes = postTimeMinutes - timezoneOffestMinutes;
       let timeDifference = currentZoneMinutes - postZoneMinutes;
-      console.log(timeDifference);
 
       // if mins is 1 or less than then call transform to now
       if (timeDifference <= 1) timelapse = "now";
