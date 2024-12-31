@@ -14,11 +14,16 @@ const Hero = () => {
       
       <div className="hero--section">
         <div className="hero--card-container">
+          
+          <div className="hero--lead-case">
+            <PreviewCard key={lead.id} post={lead} />
+          </div>
 
-          <PreviewCard key={lead.id} post={lead} />
-          {next.map(post => {
-            return ( <PreviewCard key={post.id} post={post} /> );
-          })}
+          <div className="hero--next-case">
+            {next.map(post => {
+              return ( <PreviewCard key={post.id} post={post} /> );
+            })}
+          </div>
 
         </div>
 

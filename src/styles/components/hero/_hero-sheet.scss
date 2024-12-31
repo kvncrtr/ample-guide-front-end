@@ -13,6 +13,12 @@
       display: none;
    }
 
+   .hero--section {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+   }
+
    .hero--card-container {
       display: flex;
       width: 100%;
