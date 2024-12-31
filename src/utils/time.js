@@ -16,10 +16,10 @@ class Time {
       // if mins is 1 or less than then call transform to now
       if (timeDifference <= 1) timelapse = "now";
 
-      if (timeDifference === 1) timelapse = "1 Minute Ago."
+      if (timeDifference === 1) timelapse = "1 minute ago"
 
       // if mins is less than 60 then call transform to mins
-      if (timeDifference >= 2 && timeDifference < 60) timelapse = `${timeDifference} Minutes Ago.`;
+      if (timeDifference >= 2 && timeDifference < 60) timelapse = `${timeDifference} minutes ago`;
 
       // if mins is more than 60 but less than 1440 then transform to hours
       if (timeDifference >= 60 && timeDifference < 1440) timelapse = this.transformToHours(timeDifference);
@@ -39,9 +39,9 @@ class Time {
       const floored = Math.floor(hours);
 
       if (floored === 1) {
-         timelapseString = "1 Hour Ago."
+         timelapseString = "1 hour ago"
       } else {
-         timelapseString = `${floored} Hours Ago.`
+         timelapseString = `${floored} hours ago`
       }
 
       return timelapseString;
@@ -53,9 +53,9 @@ class Time {
       const floored = Math.floor(days);
 
       if (floored === 1) {
-         timelapseString = "1 Day Ago."
+         timelapseString = "1 day ago"
       } else {
-         timelapseString = `${floored} Days Ago.`
+         timelapseString = `${floored} days ago`
       }
 
       return timelapseString;

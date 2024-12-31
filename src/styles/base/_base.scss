@@ -11,7 +11,7 @@
 }
 
 #root, html, body {
-	width: 100vw;
+	width: calc(100vw - 10px);
 }
 
 :root {

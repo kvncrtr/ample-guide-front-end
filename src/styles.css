@@ -9,7 +9,7 @@
 }
 
 #root, html, body {
-  width: 100vw;
+  width: calc(100vw - 10px);
 }
 
 :root {
@@ -108,22 +108,22 @@ input[type=number]::-webkit-outer-spin-button {
 @media screen and (min-width: 325px) {
   .nav--container {
     z-index: 1000;
-    position: sticky;
+    position: fixed;
     top: 0;
-    overflow: hidden;
     display: flex;
     align-items: center;
     height: 4.25rem;
-    width: 100vw;
+    width: calc(100vw - 10px);
     color: #FFFFFF;
+    background-color: #242424;
   }
   .nav--case {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 4.25rem;
-    padding: 0 1.063rem;
-    background-color: #242424;
+    height: 4rem;
+    margin: 0 1rem;
+    padding: 0.75rem 0;
   }
   .nav--utilities {
     display: flex;
@@ -132,38 +132,43 @@ input[type=number]::-webkit-outer-spin-button {
     width: 11.7325rem;
   }
   .nav--auth-container {
-    display: none;
-    justify-content: center;
+    display: flex;
     align-items: center;
     border: 1px solid white;
     border-radius: 2rem;
-    height: 2.65rem;
+    height: 2.625rem;
+    justify-content: center;
     width: 6rem;
   }
   .nav--search-container {
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 2.47rem;
+    width: 2.625rem;
     height: 100%;
   }
   .nav--menu-container {
-    display: none;
-    width: 2.47rem;
+    display: flex;
+    justify-content: center;
+    width: 2.625rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .nav--case {
+    margin: 0 2rem;
   }
 }
 @media screen and (min-width: 325px) {
   .hero--container {
-    display: none;
-    position: absolute;
-    top: 0;
-    width: 100%;
+    display: flex;
+    width: calc(100vw - 10px);
     height: max-content;
-    padding: 7.813rem 1rem 3rem;
+    padding: 6.813rem 1rem 2.563rem;
     background-color: #9B00F5;
   }
   .hero--card-container {
     display: flex;
+    width: 100%;
     flex-direction: column;
     gap: 1.563rem;
   }
@@ -218,14 +223,21 @@ input[type=number]::-webkit-outer-spin-button {
     height: 2.5rem;
   }
 }
+@media screen and (min-width: 768px) {
+  .hero--container {
+    padding: 7.188rem 2rem 2.563rem;
+  }
+}
 @media screen and (min-width: 325px) {
   .preview--card-case {
     display: flex;
     flex-direction: column;
     position: relative;
-    aspect-ratio: 277/320;
-    min-width: 17.313rem;
+    min-height: 20rem;
+    width: 100%;
+    aspect-ratio: 2/2;
     overflow: hidden;
+    background-color: wheat;
   }
   .preview--card-img {
     z-index: 1;
@@ -287,7 +299,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 @media screen and (min-width: 325px) {
   .home--container {
-    width: 100%;
+    width: calc(100vw - 10px);
     height: 100vh;
     position: relative;
   }
