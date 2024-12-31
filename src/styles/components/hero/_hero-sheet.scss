@@ -104,21 +104,36 @@
    .hero--container {
       display: flex;
       flex-direction: column;
-      padding-top: 5rem;
+      padding: 5rem 2.5rem auto;
    }
 
    .hero--section {
       display: grid;
       grid-template-areas: 
-         "main headlines"
-         "main headlines"
+      "main headlines"
+      "main headlines"
       ;
-      grid-template-columns: 68.97vw auto;
+      grid-template-columns: 3fr 1fr;
+      gap: 2.5rem;
+      margin: 1.063rem auto 2.5rem;
+      min-width: 60rem;
+      max-width: 80rem;
+      height: 70vh;
    }
 
    .hero--card-container {
-      margin-top: 1.063rem;
-      padding: 0;
+      display: grid; 
+      grid-template-areas: 
+      "main sec"
+      "main sec"
+      ;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 70vh;
+      padding: 0; 
+   }
+
+   .hero--lead-case {
+      grid-area: main;
    }
 
    .hero--title-container {

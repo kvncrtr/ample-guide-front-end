@@ -20,5 +20,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
-// git add .; git commit -m ""; git push origin home;
-// git switch main; git merge home; git push; git switch home;
+// git add .; git commit -m ""; git push origin home; git switch main; git merge home; git push; git switch home;
