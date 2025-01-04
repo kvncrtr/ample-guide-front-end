@@ -9,7 +9,11 @@
       width: 100%;
       aspect-ratio: 2 / 2;
       overflow: hidden;
-      background-color: wheat;
+   }
+
+   .preview--card-case:hover {
+      cursor: pointer;
+      
    }
 
    .preview--card-img {
