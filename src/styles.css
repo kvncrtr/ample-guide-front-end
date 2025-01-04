@@ -220,11 +220,16 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     flex-direction: column;
   }
-  .hero--card-container {
+  .hero--secondary-case {
+    margin-top: 1.56rem;
+  }
+  .hero--next-case {
     display: flex;
-    width: 100%;
     flex-direction: column;
-    gap: 1.563rem;
+    gap: 1.56rem;
+  }
+  .hero--headline-case {
+    margin-top: 1.875rem;
   }
   .hero--card-category {
     width: min-content;
@@ -286,36 +291,49 @@ input[type=number]::-webkit-outer-spin-button {
   .hero--container {
     display: flex;
     flex-direction: column;
-    padding: 5rem 2.5rem auto;
+    padding-top: 4.25rem;
   }
   .hero--section {
     display: grid;
-    grid-template-areas: "main headlines" "main headlines";
-    grid-template-columns: 3fr 1fr;
-    gap: 2.5rem;
-    margin: 1.063rem auto 2.5rem;
-    min-width: 60rem;
-    max-width: 80rem;
-    height: 70vh;
-  }
-  .hero--card-container {
-    display: grid;
-    grid-template-areas: "main sec" "main sec";
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 70vh;
-    padding: 0;
-  }
-  .hero--lead-case {
-    grid-area: main;
+    grid-template-columns: repeat(2, calc(50% - 0.75rem));
+    grid-template-rows: 41.4375rem;
+    gap: 1.5rem;
+    margin: 0.3125rem auto 2.5rem;
+    width: 88.195vw;
+    max-width: 82rem;
+    height: 71.598vh;
   }
   .hero--title-container {
     display: flex;
     justify-content: center;
     width: 100%;
     height: min-content;
+    margin-top: 0.5625rem;
   }
   .hero--title {
     display: flex;
+  }
+  .hero--lead-case {
+    grid-area: 1/1/2/2;
+  }
+  .hero--lead-case > :first-child {
+    aspect-ratio: unset;
+    height: 100%;
+  }
+  .hero--secondary-case {
+    grid-area: 1/2/-1/3;
+    margin-top: unset;
+    display: grid;
+    grid-template-columns: calc(50% - 0.75rem) calc(50% - 0.75rem);
+    gap: 1.5rem;
+  }
+  .hero--headline-case {
+    margin-top: unset;
+  }
+  .hero--list {
+    justify-content: space-between;
+    margin-top: 2.625rem;
+    height: calc(71.598vh - 4.8125rem);
   }
 }
 @media screen and (min-width: 325px) {
