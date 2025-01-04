@@ -32,8 +32,8 @@
    .preview--headline-title {
       color: $achromatic-100;
    }
-
-   .hero--item {
+   
+   .hero--headline-case {
       color: $achromatic-100;
       font-weight: 700;
    }
@@ -45,9 +45,17 @@
    }
 
    .hero--title {
-      font-size: 3.11rem;
+      font-size: 4rem;
       font-weight: 900;
       letter-spacing: 0.6rem;
       color: $achromatic-100;
-   }   
+   }  
+
+   .hero--lead-case h1 {
+      font-size: clamp(2.0625rem, 1.4914rem + 2.4365vi, 3.5625rem);;
+   }
+
+   .hero--secondary-case h1 {
+      font-size: 1.4375rem;
+   }
 }
