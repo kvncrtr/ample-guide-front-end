@@ -60,6 +60,14 @@ p, h1, h2, h3, h4, h5, h6 {
 	margin-block-end: 0;
 }
 
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	color: $achromatic-100;
+}
+
 #root, #__next {
 	isolation: isolate;
 }

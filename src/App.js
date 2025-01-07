@@ -1,22 +1,28 @@
 import React from "react";
 import store from "./store/config.js";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
+import PublicLayoutPage from "./pages/PublicLayoutPage.jsx";
 
 import HomePage from "./pages/HomePage.jsx";
 import BlogDetails from "./pages/BlogDetailsPage.jsx";
 
+const router = createBrowserRouter([
+   {
+      path: "/", 
+      element: <PublicLayoutPage />,
+      children: [
+         {path: "/", element: <HomePage />},
+         {path: "/post/:id", element: <BlogDetails />}
+      ]
+   },
+   
+]);
+
 const App = () => {
    return (
       <Provider store={store}>
-         <Router>
-            <div>
-               <Routes>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/post/:id" element={<BlogDetails />} />
-               </Routes>
-            </div>
-         </Router>
+         <RouterProvider router={router} />
       </Provider>
    );
 };

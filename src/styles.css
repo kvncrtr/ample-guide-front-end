@@ -58,6 +58,14 @@ p, h1, h2, h3, h4, h5, h6 {
   margin-block-end: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #FFFFFF;
+}
+
 #root, #__next {
   isolation: isolate;
 }
@@ -351,7 +359,9 @@ input[type=number]::-webkit-outer-spin-button {
     width: 100%;
     aspect-ratio: 2/2;
     overflow: hidden;
-    background-color: wheat;
+  }
+  .preview--card-case:hover {
+    cursor: pointer;
   }
   .preview--card-img {
     z-index: 1;

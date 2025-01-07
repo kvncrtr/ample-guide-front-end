@@ -1,5 +1,6 @@
 import React from 'react';
 import { MagnifyingGlass, List } from "@phosphor-icons/react";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -9,7 +10,7 @@ const Navbar = () => {
         <h2 className="nav--logo">AG</h2> 
 
         <div className="nav--list">
-          <p className={"nav--list-item"}>Latest</p>
+          <Link className={"nav--list-item"} to={"/"}>Latest</Link>
           <p className={"nav--list-item"}>Faith</p>
           <p className={"nav--list-item"}>Music</p>
           <p className={"nav--list-item"}>Business</p>
